@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DepartmentController;
+use App\Http\Controllers\EmployeeController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +24,5 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::resource('departments', DepartmentController::class);
+Route::resource('employees', EmployeeController::class);
